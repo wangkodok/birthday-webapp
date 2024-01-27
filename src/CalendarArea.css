@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+:root {
+  --day-of-the-week: 48px;
+  --few-days: 48px;
+}
+
+.year-month {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.year-month p {
+  font-size: 20px;
+}
+
+.day-of-the-week {
+  display: flex;
+}
+
+.day-of-the-week li {
+  width: calc(100% / 7);
+  height: var(--day-of-the-week);
+  text-align: center;
+  line-height: var(--day-of-the-week);
+  font-weight: 700;
+  color: #000;
+  background-color: #eee;
+}
+
+.few-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.few-days li {
+  width: calc(100% / 7);
+  height: var(--few-days);
+  text-align: center;
+  line-height: var(--few-days);
+}
