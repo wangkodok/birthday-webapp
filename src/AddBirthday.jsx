@@ -1,6 +1,23 @@
+import { useState } from "react";
 import Wrapper from "./components/Wrapper";
 
 export default function AddBirthday() {
+  const [inputValue, setInputValue] = useState({
+    name: "",
+    phone: "",
+    month: "",
+    day: "",
+  });
+
+  console.log(inputValue);
+
+  function handleChange(event) {
+    setInputValue({
+      ...inputValue,
+      [event.target.name]: event.target.value,
+    });
+  }
+
   return (
     <Wrapper>
       <main className="main-container">
@@ -10,15 +27,36 @@ export default function AddBirthday() {
             <div className="profile"></div>
             <p>프로필 상태 메시지</p>
           </div>
-          <form>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+            }}
+          >
             <label htmlFor="name">
-              <input id="name" type="text" placeholder="이름" />
+              <input
+                id="name"
+                type="text"
+                placeholder="이름"
+                onChange={handleChange}
+                name="name"
+              />
             </label>
             <label htmlFor="phone">
-              <input id="phone" type="text" placeholder="전화번호" />
+              <input
+                id="phone"
+                type="text"
+                placeholder="전화번호"
+                onChange={handleChange}
+                name="phone"
+              />
             </label>
             <label htmlFor="month-day">
-              <select name="month" id="month" defaultValue={"월"}>
+              <select
+                name="month"
+                id="month"
+                defaultValue={"월"}
+                onChange={handleChange}
+              >
                 <option value="월" disabled>
                   월
                 </option>
@@ -35,7 +73,12 @@ export default function AddBirthday() {
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-              <select name="day" id="day" defaultValue={"일"}>
+              <select
+                name="day"
+                id="day"
+                defaultValue={"일"}
+                onChange={handleChange}
+              >
                 <option value="일" disabled>
                   일
                 </option>
@@ -72,7 +115,14 @@ export default function AddBirthday() {
                 <option value="31">31</option>
               </select>
             </label>
-            <button className="save-btn">저장</button>
+            <button
+              className="save-btn"
+              onClick={() => {
+                console.log(inputValue);
+              }}
+            >
+              저장
+            </button>
           </form>
         </section>
       </main>
