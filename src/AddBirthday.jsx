@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Wrapper from "./components/Wrapper";
+import { date } from "./date";
 
 export default function AddBirthday() {
   const [inputValue, setInputValue] = useState({
@@ -119,6 +120,7 @@ export default function AddBirthday() {
               className="save-btn"
               onClick={() => {
                 console.log(inputValue);
+                date.push(inputValue);
               }}
             >
               저장
