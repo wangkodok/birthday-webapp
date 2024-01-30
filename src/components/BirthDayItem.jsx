@@ -1,10 +1,13 @@
-export default function BirthDayItem() {
+/* eslint-disable */
+export default function BirthDayItem({ dates }) {
   return (
     <li>
       <div className="profile"></div>
       <div className="text">
-        <h3>이름</h3>
-        <p>생일 날짜</p>
+        <h3>{dates.name}</h3>
+        <p>
+          {dates.month}월 {dates.day}일
+        </p>
       </div>
       <div className="d-day">
         <span className="number">0</span>
