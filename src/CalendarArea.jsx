@@ -16,8 +16,6 @@ export default function CalendarArea() {
     currentMonth.getMonth() + 0, // 0는 1월, 1는 2월, 2는 3월 ··· 10는 11월, 11는 12월
     1 // 현재 월 시작하는 날짜를 반환
   ).getDay();
-  console.log(curMonthStartDate, "현재 월의 시작하는 요일");
-  console.log(dayOfTheWeek[curMonthStartDate], "요일");
 
   // 현재 월의 마지막 날짜
   const curMonthEndDate = new Date(
@@ -25,15 +23,9 @@ export default function CalendarArea() {
     currentMonth.getMonth() + 1,
     0 // 전날 월의 마지막 날짜를 반환
   ).getDate();
-  console.log(curMonthEndDate, "현재 월의 마지막 날짜");
 
   // 현재 월의 모든 날짜
   const arr = Array.from(Array(curMonthEndDate), (_, index) => index + 1);
-  console.log(arr, "현재 월의 모든 날짜");
-
-  // 현재 월의 요일부터 날짜 지정
-  console.log(dayOfTheWeek);
-  console.log(dayOfTheWeek[curMonthStartDate], "요일");
 
   // 월의 첫째 주 없는 날짜
   const dayDate = [];
@@ -46,7 +38,6 @@ export default function CalendarArea() {
 
   // 이전 달
   function prevMonth() {
-    console.log("prevMonth");
     setCurrentMonth(
       new Date(
         currentMonth.getFullYear(),
@@ -58,7 +49,6 @@ export default function CalendarArea() {
 
   // 다음 달
   function nextMonth() {
-    console.log("nextMonth");
     setCurrentMonth(
       new Date(
         currentMonth.getFullYear(),
