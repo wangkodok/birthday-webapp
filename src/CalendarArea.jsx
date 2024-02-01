@@ -27,14 +27,33 @@ export default function CalendarArea() {
   // 현재 월의 모든 날짜
   const arr = Array.from(Array(curMonthEndDate), (_, index) => index + 1);
 
+  // 이전 월의 마지막 날짜
+  const prev = new Date(
+    currentMonth.getFullYear(), // 년도
+    currentMonth.getMonth(),
+    0 // 전날 월의 마지막 날짜를 반환
+  ).getDate();
+
   // 월의 첫째 주 없는 날짜
-  const dayDate = [];
-  for (let i = 0; i < 7; i++) {
-    if (curMonthStartDate > i) {
-      dayDate.push(" ");
-    }
+  const dayDatePrev = [];
+  for (let index = prev; index > prev - curMonthStartDate; index--) {
+    dayDatePrev.push(index);
   }
-  arr.unshift(...dayDate);
+  arr.unshift(...dayDatePrev.reverse());
+
+  // 다음 월의 시작하는 요일
+  const next = new Date(
+    currentMonth.getFullYear(),
+    currentMonth.getMonth() + 1,
+    1
+  ).getDay();
+
+  // 월의 마지막 주 없는 날짜
+  const dayDateNext = [];
+  for (let index = 0; index < 7 - next; index++) {
+    dayDateNext.push(index + 1);
+  }
+  arr.push(...dayDateNext);
 
   // 이전 달
   function prevMonth() {
