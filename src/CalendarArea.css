@@ -40,4 +40,10 @@
   height: var(--few-days);
   text-align: center;
   line-height: var(--few-days);
+  color: #ccc;
+}
+
+.few-days .current-month {
+  font-weight: 700;
+  color: #000;
 }

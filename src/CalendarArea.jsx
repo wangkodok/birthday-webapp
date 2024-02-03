@@ -93,6 +93,18 @@ export default function CalendarArea() {
       </ul>
       <ul className="few-days">
         {arr.map((item, index) => {
+          for (let i = 0; i < arr.length; i++) {
+            if (
+              index >= curMonthStartDate &&
+              index < arr.length - dayDateNext.length
+            ) {
+              return (
+                <li className="current-month" key={index}>
+                  {item}
+                </li>
+              );
+            }
+          }
           return <li key={index}>{item}</li>;
         })}
       </ul>
