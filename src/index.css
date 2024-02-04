@@ -125,6 +125,34 @@
 
 .sec-add-birthday label {
   display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.sec-add-birthday label input {
+  padding: 16px 0;
+  border: none;
+  width: 100%;
+  text-indent: 16px;
+  font-size: 16px;
+}
+
+.sec-add-birthday label input:focus {
+  outline: none;
+}
+
+.sec-add-birthday select {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 16px 0;
+  text-indent: 16px;
+  width: 50%;
+  font-size: 16px;
+}
+
+.sec-add-birthday select:focus {
+  outline: none;
 }
 
 .sec-add-birthday .month-day {
@@ -137,7 +165,12 @@
 }
 
 .sec-add-birthday .save-btn {
+  border: none;
+  background-color: #eee;
   display: block;
+  width: 100%;
+  padding: 16px 0;
+  font-size: 16px;
 }
 
 /* 달력 CSS */
