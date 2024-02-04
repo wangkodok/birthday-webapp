@@ -15,6 +15,10 @@
   overflow: auto;
 }
 
+a:active {
+  color: -webkit-link;
+}
+
 /* 공통 */
 .wrapper h2 {
   font-size: 32px;
