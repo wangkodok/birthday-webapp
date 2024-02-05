@@ -100,7 +100,7 @@ export default function CalendarArea() {
             ) {
               return (
                 <li className="current-month" key={index}>
-                  {item}
+                  <button>{item}</button>
                 </li>
               );
             }
