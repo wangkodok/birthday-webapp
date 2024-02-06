@@ -1,7 +1,9 @@
+/* eslint-disable */
 import { useState } from "react";
 import "./CalendarArea.css";
+import { date } from "./date";
 
-export default function CalendarArea() {
+export default function CalendarArea({ setBirthdayListDate }) {
   const dayOfTheWeek = ["일", "월", "화", "수", "목", "금", "토"];
   const [currentMonth, setCurrentMonth] = useState(new Date());
   // const [date, setDate] = useState([]);
@@ -77,6 +79,19 @@ export default function CalendarArea() {
     );
   }
 
+  // 해당하는 날짜의 생일 목록
+  function BirthdayList(e) {
+    // console.dir(e.target.innerText);
+    console.log(date, "해당하는 날짜");
+    const dateResult = date.filter((item) => {
+      if (parseInt(item.month) === month && item.day === e.target.innerText) {
+        return true;
+      }
+    });
+
+    setBirthdayListDate(dateResult);
+  }
+
   return (
     <>
       <div className="year-month">
@@ -100,7 +115,7 @@ export default function CalendarArea() {
             ) {
               return (
                 <li className="current-month" key={index}>
-                  <button>{item}</button>
+                  <button onClick={BirthdayList}>{item}</button>
                 </li>
               );
             }

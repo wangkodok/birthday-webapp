@@ -199,6 +199,14 @@ a:active {
   margin: 0 0 16px 0;
 }
 
+.sec-calendar .birthday-list li {
+  justify-content: flex-start;
+}
+
+.sec-calendar .birthday-list .text {
+  margin: 0 0 0 16px;
+}
+
 /* 설정 */
 .sec-setting {
   padding: 48px 0;
