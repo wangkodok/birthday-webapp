@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Wrapper from "./components/Wrapper";
-import { date } from "./date";
+import Wrapper from "../components/Wrapper";
+import { date } from "../date";
 
-export default function AddBirthday() {
+export default function AddBirthdayPage() {
   const [inputValue, setInputValue] = useState({
     name: "",
     phone: "",

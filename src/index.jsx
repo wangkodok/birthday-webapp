@@ -3,9 +3,9 @@ import { Reset } from "styled-reset";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Calendar from "./Calendar.jsx";
-import Setting from "./Setting.jsx";
-import AddBirthday from "./AddBirthday.jsx";
+import CalendarPage from "./pages/CalendarPage.jsx";
+import SettingPage from "./pages/SettingPage.jsx";
+import AddBirthdayPage from "./pages/AddBirthdayPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,15 +14,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/calendar",
-    element: <Calendar />,
+    element: <CalendarPage />,
   },
   {
     path: "/setting",
-    element: <Setting />,
+    element: <SettingPage />,
   },
   {
     path: "/add-birthday",
-    element: <AddBirthday />,
+    element: <AddBirthdayPage />,
   },
 ]);
 

@@ -1,6 +1,6 @@
-import Wrapper from "./components/Wrapper";
+import Wrapper from "../components/Wrapper";
 
-export default function Setting() {
+export default function SettingPage() {
   return (
     <Wrapper>
       <main className="main-container">

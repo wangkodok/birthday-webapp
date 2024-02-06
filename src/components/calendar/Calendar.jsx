@@ -1,9 +1,9 @@
 /* eslint-disable */
 import { useState } from "react";
-import "./CalendarArea.css";
-import { date } from "./date";
+import "./Calendar.css";
+import { date } from "../../date";
 
-export default function CalendarArea({ setBirthdayListDate }) {
+export default function Calendar({ setBirthdayListDate }) {
   const dayOfTheWeek = ["일", "월", "화", "수", "목", "금", "토"];
   const [currentMonth, setCurrentMonth] = useState(new Date());
   // const [date, setDate] = useState([]);
