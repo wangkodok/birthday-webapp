@@ -11,6 +11,7 @@ export default function Calendar({ setBirthdayListDate }) {
   // 현재 몇 년, 몇 월
   const year = currentMonth.getFullYear();
   const month = currentMonth.getMonth() + 1;
+  const dd = currentMonth.getDate();
 
   // 현재 월의 시작하는 요일
   const curMonthStartDate = new Date(
@@ -109,6 +110,13 @@ export default function Calendar({ setBirthdayListDate }) {
       <ul className="few-days">
         {arr.map((item, index) => {
           for (let i = 0; i < arr.length; i++) {
+            if (curMonthStartDate + dd - 1 === index) {
+              return (
+                <li className="current-month day" key={index}>
+                  <button onClick={BirthdayList}>{item}</button>
+                </li>
+              );
+            }
             if (
               index >= curMonthStartDate &&
               index < arr.length - dayDateNext.length

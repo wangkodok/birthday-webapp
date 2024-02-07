@@ -58,3 +58,8 @@
   width: 100%;
   height: 100%;
 }
+
+.few-days .current-month.day button {
+  background-color: #eee;
+  font-weight: 700;
+}
