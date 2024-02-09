@@ -94,8 +94,21 @@ a:active {
 .header .icon {
   width: 48px;
   height: 48px;
-  background-color: #eee;
-  border-radius: 24px;
+  background-size: 32px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header .icon.birthday-cake {
+  background-image: url("../src/birthday-cake.png");
+}
+
+.header .icon.calendar {
+  background-image: url("../src/calendar.png");
+}
+
+.header .icon.settings {
+  background-image: url("../src/setting.png");
 }
 
 .header .icon-text {
