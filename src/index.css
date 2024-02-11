@@ -100,15 +100,15 @@ a:active {
 }
 
 .header .icon.birthday-cake {
-  background-image: url("../src/birthday-cake.png");
+  background-image: url("/src/assets/birthday-cake.png");
 }
 
 .header .icon.calendar {
-  background-image: url("../src/calendar.png");
+  background-image: url("/src/assets/calendar.png");
 }
 
 .header .icon.settings {
-  background-image: url("../src/setting.png");
+  background-image: url("/src/assets/setting.png");
 }
 
 .header .icon-text {
