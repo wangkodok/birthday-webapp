@@ -44,10 +44,6 @@ export default function AddBirthdayPage() {
                 <img src={uploadedImage} alt="프로필 이미지" />
               ) : null}
             </label>
-            {/* <div className="birthday-list">
-              <div className="profile"></div>
-              <p>프로필 상태 메시지</p>
-            </div> */}
             <label htmlFor="name">
               <input
                 id="name"
