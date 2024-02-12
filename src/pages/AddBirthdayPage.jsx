@@ -9,6 +9,7 @@ export default function AddBirthdayPage() {
     month: "",
     day: "",
   });
+  const [uploadedImage, setUploadedImage] = useState(null);
 
   console.log(inputValue);
 
@@ -24,15 +25,29 @@ export default function AddBirthdayPage() {
       <main className="main-container">
         <section className="sec-add-birthday">
           <h2>생일 추가</h2>
-          <div className="birthday-list">
-            <div className="profile"></div>
-            <p>프로필 상태 메시지</p>
-          </div>
           <form
             onSubmit={(event) => {
               event.preventDefault();
             }}
           >
+            <label htmlFor="profile" className="profile">
+              <input
+                id="profile"
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  const imageUrl = URL.createObjectURL(file);
+                  setUploadedImage(imageUrl);
+                }}
+              />
+              {uploadedImage ? (
+                <img src={uploadedImage} alt="프로필 이미지" />
+              ) : null}
+            </label>
+            {/* <div className="birthday-list">
+              <div className="profile"></div>
+              <p>프로필 상태 메시지</p>
+            </div> */}
             <label htmlFor="name">
               <input
                 id="name"
