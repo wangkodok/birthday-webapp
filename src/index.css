@@ -168,7 +168,7 @@ a:active {
   margin: 20px 0 0 0;
 }
 
-.sec-add-birthday label {
+.sec-add-birthday label ~ label {
   display: block;
   border-bottom: 1px solid #eee;
 }
