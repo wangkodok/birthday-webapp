@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import { date } from "../date";
-import Profile from "../components/Profile";
+// import Profile from "../components/Profile";
 
 export default function AddBirthdayPage() {
   const [inputValue, setInputValue] = useState({
@@ -9,16 +9,34 @@ export default function AddBirthdayPage() {
     phone: "",
     month: "",
     day: "",
+    profile: "",
   });
   const [uploadedImage, setUploadedImage] = useState(null);
 
   console.log(inputValue);
 
   function handleChange(event) {
+    console.log(event);
+
+    if (event.target.name === "profile") {
+      const file = event.target.files[0];
+      const imageUrl = URL.createObjectURL(file);
+      console.log(imageUrl);
+      setUploadedImage(imageUrl);
+    }
+
     setInputValue({
       ...inputValue,
-      [event.target.name]: event.target.value,
+      [event.target.name]:
+        event.target.name === "profile"
+          ? URL.createObjectURL(event.target.files[0])
+          : event.target.value,
     });
+
+    // setInputValue({
+    //   ...inputValue,
+    //   [event.target.name]: event.target.value,
+    // });
   }
 
   return (
@@ -31,10 +49,22 @@ export default function AddBirthdayPage() {
               event.preventDefault();
             }}
           >
-            <Profile
+            {/* <Profile
               uploadedImage={uploadedImage}
               setUploadedImage={setUploadedImage}
-            />
+            /> */}
+
+            <label htmlFor="profile" className="profile">
+              <input
+                id="profile"
+                type="file"
+                onChange={handleChange}
+                name="profile"
+              />
+              {uploadedImage ? (
+                <img src={uploadedImage} alt="프로필 이미지" />
+              ) : null}
+            </label>
             <label htmlFor="name">
               <input
                 id="name"

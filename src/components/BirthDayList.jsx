@@ -18,7 +18,9 @@ export default function BirthDayList({ ...props }) {
     itemResultGet = props.birthdayListDate.map((item, index) => {
       return (
         <li key={index}>
-          <div className="profile"></div>
+          <div className="profile">
+            <img src={item.profile} alt="" />
+          </div>
           <div className="text">
             <h3>{item.name}님</h3>
             <p>

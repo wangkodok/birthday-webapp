@@ -2,7 +2,9 @@
 export default function BirthDayItem({ dates }) {
   return (
     <li>
-      <div className="profile"></div>
+      <div className="profile">
+        <img src={dates.profile} alt="" />
+      </div>
       <div className="text">
         <h3>{dates.name}</h3>
         <p>
