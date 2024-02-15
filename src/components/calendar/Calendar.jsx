@@ -3,9 +3,12 @@ import { useState } from "react";
 import "./Calendar.css";
 import { date } from "../../date";
 
-export default function Calendar({ setBirthdayListDate }) {
+export default function Calendar({
+  setBirthdayListDate,
+  currentMonth,
+  setCurrentMonth,
+}) {
   const dayOfTheWeek = ["일", "월", "화", "수", "목", "금", "토"];
-  const [currentMonth, setCurrentMonth] = useState(new Date());
   // const [date, setDate] = useState([]);
 
   // 현재 몇 년, 몇 월

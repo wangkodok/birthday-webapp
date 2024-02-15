@@ -5,13 +5,18 @@ import { useState } from "react";
 
 export default function CalendarPage() {
   const [birthdayListDate, setBirthdayListDate] = useState([]);
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
   return (
     <Wrapper>
       <main className="main-container">
         <section className="sec-calendar">
           <div className="calendar-area">
-            <Calendar setBirthdayListDate={setBirthdayListDate} />
+            <Calendar
+              setBirthdayListDate={setBirthdayListDate}
+              currentMonth={currentMonth}
+              setCurrentMonth={setCurrentMonth}
+            />
           </div>
           <div className="calendar-list">
             <p>2024년 12월 31일</p>
