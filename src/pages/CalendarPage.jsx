@@ -18,21 +18,6 @@ export default function CalendarPage() {
             {birthdayListDate.length === 0 ? null : (
               <BirthDayList birthdayListDate={birthdayListDate} />
             )}
-            {/* {birthdayListDate.length === 0
-              ? null
-              : birthdayListDate.map((item, index) => {
-                  return (
-                    <BirthDayList
-                      key={index}
-                      birthdayListDate={birthdayListDate}
-                    />
-                  );
-                  // return (
-                  //   <div key={index}>
-                  //     {item.name}님, 생일은{item.month}월 {item.day}일
-                  //   </div>
-                  // );
-                })} */}
           </div>
         </section>
       </main>
