@@ -3,6 +3,7 @@ import Wrapper from "../components/Wrapper";
 import { date } from "../date";
 import Profile from "../components/Profile";
 import Name from "../components/Name";
+import Phone from "../components/Phone";
 
 export default function AddBirthdayPage() {
   const [inputValue, setInputValue] = useState({
@@ -55,15 +56,7 @@ export default function AddBirthdayPage() {
               onHandleChange={handleChange}
             />
             <Name onHandleChange={handleChange} />
-            <label htmlFor="phone">
-              <input
-                id="phone"
-                type="text"
-                placeholder="전화번호"
-                onChange={handleChange}
-                name="phone"
-              />
-            </label>
+            <Phone onHandleChange={handleChange} />
             <label htmlFor="month-day">
               <select
                 name="month"
