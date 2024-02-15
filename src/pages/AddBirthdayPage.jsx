@@ -2,6 +2,7 @@ import { useState } from "react";
 import Wrapper from "../components/Wrapper";
 import { date } from "../date";
 import Profile from "../components/Profile";
+import Name from "../components/Name";
 
 export default function AddBirthdayPage() {
   const [inputValue, setInputValue] = useState({
@@ -53,15 +54,7 @@ export default function AddBirthdayPage() {
               uploadedImage={uploadedImage}
               onHandleChange={handleChange}
             />
-            <label htmlFor="name">
-              <input
-                id="name"
-                type="text"
-                placeholder="이름"
-                onChange={handleChange}
-                name="name"
-              />
-            </label>
+            <Name onHandleChange={handleChange} />
             <label htmlFor="phone">
               <input
                 id="phone"
