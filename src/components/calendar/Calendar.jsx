@@ -1,12 +1,14 @@
 /* eslint-disable */
 import { useState } from "react";
 import "./Calendar.css";
-import { date } from "../../date";
 
 export default function Calendar({
   setBirthdayListDate,
   currentMonth,
   setCurrentMonth,
+  date,
+  setResultDefault,
+  setDatePicker,
 }) {
   const dayOfTheWeek = ["일", "월", "화", "수", "목", "금", "토"];
   // const [date, setDate] = useState([]);
@@ -85,8 +87,6 @@ export default function Calendar({
 
   // 해당하는 날짜의 생일 목록
   function BirthdayList(e) {
-    // console.dir(e.target.innerText);
-    console.log(date, "해당하는 날짜");
     const dateResult = date.filter((item) => {
       if (parseInt(item.month) === month && item.day === e.target.innerText) {
         return true;
@@ -94,6 +94,8 @@ export default function Calendar({
     });
 
     setBirthdayListDate(dateResult);
+    setResultDefault(true);
+    setDatePicker(e.target.innerText);
   }
 
   return (
