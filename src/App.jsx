@@ -8,7 +8,7 @@ export default function App() {
       <main className="main-container">
         <section className="sec-birthday">
           <div className="use-area">
-            <Link to="/add-birthday">추가하기</Link>
+            <Link to="/add-birthday" className="birthday-add" />
           </div>
           <h2>생일</h2>
           <BirthDayList />

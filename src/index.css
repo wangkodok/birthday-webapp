@@ -156,7 +156,16 @@ a:active {
 }
 
 .sec-birthday .use-area {
-  padding: 16px 0;
+  padding: 14px 0;
+}
+
+.sec-birthday .use-area .birthday-add {
+  display: block;
+  background-image: url("./assets//plus-button.png");
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  width: 20px;
+  height: 20px;
 }
 
 /* 생일 추가 */
