@@ -25,7 +25,8 @@ export default function CalendarPage() {
             />
           </div>
           <div className="calendar-list">
-            <p>2024년 12월 31일</p>
+            {/* <p>2024년 12월 31일</p> */}
+            {birthdayListDate.length === 0 ? <p>생일자가 없습니다.</p> : null}
             <ul className="birthday-list">
               {date.map((item, key) => {
                 if (resultDefault === undefined) {
