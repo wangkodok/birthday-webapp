@@ -103,8 +103,8 @@ export default function Calendar({
       <div className="year-month">
         <p>{`${year}년 ${month}월`}</p>
         <div>
-          <button onClick={prevMonth}>&#60;</button>
-          <button onClick={nextMonth}>&#62;</button>
+          <button className="arrow-btn prev" onClick={prevMonth} />
+          <button className="arrow-btn next" onClick={nextMonth} />
         </div>
       </div>
       <ul className="day-of-the-week">
