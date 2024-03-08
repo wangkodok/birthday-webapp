@@ -7,7 +7,7 @@
 
 .wrapper {
   position: relative;
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   height: 100%;
   background-color: #fafafa;
@@ -103,8 +103,9 @@ a:active {
 .header {
   position: fixed;
   bottom: 0;
-  width: 500px;
+  width: 100%;
   background-color: #fff;
+  z-index: 1000;
 }
 
 .header ul {
@@ -309,4 +310,10 @@ a:active {
 
 .sec-setting li:last-child button {
   border-bottom: 1px solid transparent;
+}
+
+@media screen and (min-width: 500px) {
+  .header {
+    width: 500px;
+  }
 }
