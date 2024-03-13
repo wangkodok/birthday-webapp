@@ -8,6 +8,7 @@ export default function CalendarPage() {
   const [dates, setDates] = useState({
     birthdayListDate: [],
     currentMonth: new Date(),
+    datePicker: new Date().getDate(),
   });
 
   const dayOfTheWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -90,13 +91,12 @@ export default function CalendarPage() {
     });
   }
 
-  // 해당하는 날짜의 생일 목록
   function BirthdayList(e) {
     const dateResult = date.filter((item) => {
-      if (parseInt(item.month) === mm && item.day === e.target.innerText) {
-        return true;
-      }
+      return parseInt(item.month) === mm && item.day === e.target.innerText;
     });
+
+    console.log(e.target.innerText, "클릭한 날짜");
 
     setDates((prevState) => {
       return {
@@ -107,6 +107,12 @@ export default function CalendarPage() {
       };
     });
   }
+
+  // 생일 목록
+  let today = `${mm}월${dates.datePicker}일`;
+  let dateToday = date.filter((item) => {
+    return `${item.month}월${item.day}일` === today;
+  });
 
   return (
     <Wrapper>
@@ -127,56 +133,35 @@ export default function CalendarPage() {
             />
           </div>
           <div className="calendar-list">
-            {/* <p>2024년 12월 31일</p> */}
-            {dates.birthdayListDate.length === 0 ? (
+            {dateToday.length === 0 ? (
               <p>생일자가 없습니다.</p>
-            ) : null}
-            <ul className="birthday-list">
-              {date.map((item, key) => {
-                if (dates.resultDefault === undefined) {
-                  if (
-                    item.month == dates.currentMonth.getMonth() + 1 &&
-                    item.day == dates.currentMonth.getDate()
-                  ) {
-                    return (
-                      <li key={key}>
-                        <div className="profile">
-                          <img src={item.profile} alt="" />
-                        </div>
-                        <div className="text">
-                          <h3>{item.name}님</h3>
-                          <p>
-                            {item.month}월 {item.day}일
-                          </p>
-                        </div>
-                      </li>
-                    );
-                  }
-                }
-              })}
-            </ul>
-            <ul className="birthday-list">
-              {dates.birthdayListDate.map((item, key) => {
-                if (
-                  item.month == dates.currentMonth.getMonth() + 1 &&
-                  item.day == dates.datePicker
-                ) {
-                  return (
-                    <li key={key}>
-                      <div className="profile">
-                        <img src={item.profile} alt="" />
-                      </div>
-                      <div className="text">
-                        <h3>{item.name}님</h3>
-                        <p>
-                          {item.month}월 {item.day}일
-                        </p>
-                      </div>
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            ) : (
+              <>
+                <p>생일 축하드립니다.</p>
+                <ul className="birthday-list">
+                  {dateToday.map((item, key) => {
+                    if (
+                      item.month == dates.currentMonth.getMonth() + 1 &&
+                      item.day == dates.datePicker
+                    ) {
+                      return (
+                        <li key={key}>
+                          <div className="profile">
+                            <img src={item.profile} alt="" />
+                          </div>
+                          <div className="text">
+                            <h3>{item.name}님</h3>
+                            <p>
+                              {item.month}월 {item.day}일
+                            </p>
+                          </div>
+                        </li>
+                      );
+                    }
+                  })}
+                </ul>
+              </>
+            )}
           </div>
         </section>
       </main>
