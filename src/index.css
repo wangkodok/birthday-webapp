@@ -45,12 +45,12 @@ a:active {
 }
 
 .birthday-list .text {
-  width: 300px;
+  margin: 0 0 0 12px;
 }
 
 .birthday-list .text h3 {
   font-size: 24px;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -315,5 +315,18 @@ a:active {
 @media screen and (min-width: 500px) {
   .header {
     width: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* 공통 */
+
+  .birthday-list .text h3 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+  }
+
+  .birthday-list .text p {
+    font-size: 16px;
   }
 }
