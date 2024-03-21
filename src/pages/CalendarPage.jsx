@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { date } from "../date";
 
+import profile from "../assets/profile.png";
+
 import Wrapper from "../components/Wrapper";
 import Calendar from "../components/calendar/Calendar";
 
@@ -114,6 +116,8 @@ export default function CalendarPage() {
     return `${item.month}월${item.day}일` === today;
   });
 
+  console.log(dateToday);
+
   return (
     <Wrapper>
       <main className="main-container">
@@ -147,7 +151,11 @@ export default function CalendarPage() {
                       return (
                         <li key={key}>
                           <div className="profile">
-                            <img src={item.profile} alt="" />
+                            {item.profile === "" ? (
+                              <img src={profile} alt="" />
+                            ) : (
+                              <img src={item.profile} alt="" />
+                            )}
                           </div>
                           <div className="text">
                             <h3>{item.name}님</h3>

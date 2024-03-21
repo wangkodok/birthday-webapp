@@ -1,9 +1,15 @@
 /* eslint-disable */
+import profileImg from "../assets/profile.png";
+
 export default function BirthDayItem({ dates }) {
   return (
     <li>
       <div className="profile">
-        <img src={dates.profile} alt="" />
+        {dates.profile === "" ? (
+          <img src={profileImg} alt="" />
+        ) : (
+          <img src={dates.profile} alt="" />
+        )}
       </div>
       <div className="text">
         <h3>{dates.name}</h3>
