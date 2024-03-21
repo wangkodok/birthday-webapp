@@ -19,8 +19,6 @@ export default function AddBirthdayPage() {
   console.log(inputValue);
 
   function handleChange(event) {
-    console.log(event);
-
     if (event.target.name === "profile") {
       const file = event.target.files[0];
       const imageUrl = URL.createObjectURL(file);
@@ -56,6 +54,7 @@ export default function AddBirthdayPage() {
               uploadedImage={uploadedImage}
               onHandleChange={handleChange}
             />
+            <p className="profile-desc">프로필 사진 추가해보세요.</p>
             <Name onHandleChange={handleChange} />
             <Phone onHandleChange={handleChange} />
             <BirthdayDate onHandleChange={handleChange} />
