@@ -26,6 +26,49 @@ a:active {
   margin: 0 0 16px 0;
 }
 
+.required-desc {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.required-desc .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.required-desc .popup .popup-area {
+  width: 300px;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.required-desc .popup p,
+.required-desc .popup button {
+  color: #000;
+}
+
+.required-desc .popup p {
+  font-size: 20px;
+  margin: 0 0 12px 0;
+}
+
+.required-desc .popup button {
+  font-size: 20px;
+}
+
 .birthday-list li {
   display: flex;
   align-items: center;

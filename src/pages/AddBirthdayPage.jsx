@@ -15,6 +15,7 @@ export default function AddBirthdayPage() {
     profile: "",
   });
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [inputRequired, setInputRequired] = useState(false);
 
   console.log(inputValue);
 
@@ -61,13 +62,38 @@ export default function AddBirthdayPage() {
             <button
               className="save-btn"
               onClick={() => {
-                console.log(inputValue);
-                date.push(inputValue);
+                if (
+                  inputValue.name === "" ||
+                  inputValue.phone === "" ||
+                  inputValue.month === "" ||
+                  inputValue.day === ""
+                ) {
+                  setInputRequired(true);
+                  return;
+                } else {
+                  date.push(inputValue);
+                }
               }}
             >
               저장
             </button>
           </form>
+          {inputRequired === true ? (
+            <div className="required-desc">
+              <div className="popup">
+                <div className="popup-area">
+                  <p>작성하지 않는 빈칸이 있습니다.</p>
+                  <button
+                    onClick={() => {
+                      setInputRequired(false);
+                    }}
+                  >
+                    확인
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : null}
         </section>
       </main>
     </Wrapper>
