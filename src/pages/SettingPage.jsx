@@ -1,3 +1,4 @@
+import SectionTitle from "../components/SectionTitle";
 import Wrapper from "../components/Wrapper";
 
 export default function SettingPage() {
@@ -5,7 +6,7 @@ export default function SettingPage() {
     <Wrapper>
       <main className="main-container">
         <section className="sec-setting">
-          <h2>설정</h2>
+          <SectionTitle>설정</SectionTitle>
           <div>
             <p>음력 표시</p>
             <ul>

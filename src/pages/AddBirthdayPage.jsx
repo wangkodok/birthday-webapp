@@ -5,6 +5,7 @@ import Profile from "../components/Profile";
 import Name from "../components/Name";
 import Phone from "../components/Phone";
 import BirthdayDate from "../components/BirthdayDate";
+import SectionTitle from "../components/SectionTitle";
 
 export default function AddBirthdayPage() {
   const [inputValue, setInputValue] = useState({
@@ -45,7 +46,7 @@ export default function AddBirthdayPage() {
     <Wrapper>
       <main className="main-container">
         <section className="sec-add-birthday">
-          <h2>생일 추가</h2>
+          <SectionTitle>생일 추가</SectionTitle>
           <form
             onSubmit={(event) => {
               event.preventDefault();

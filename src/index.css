@@ -20,12 +20,6 @@ a:active {
 }
 
 /* 공통 */
-.wrapper h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 16px 0;
-}
-
 .required-desc {
   position: fixed;
   top: 0;
